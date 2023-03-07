@@ -1,0 +1,85 @@
+[
+    {
+        "name": "Auburn, Washington",
+        "id": 1,
+        "regionId": 1
+    },
+    {
+        "name": "Kent, Washington",
+        "id": 2,
+        "regionId": 1
+    },
+    {
+        "name": "Maple Valley, Washington",
+        "id": 3,
+        "regionId": 1
+    },
+    {
+        "name": "Renton, Washington",
+        "id": 4,
+        "regionId": 1
+    },
+    {
+        "name": "Enumclaw, Washington",
+        "id": 5,
+        "regionId": 1
+    },
+    {
+        "name": "Federal Way, Washington",
+        "id": 6,
+        "regionId": 1
+    },
+    {
+        "name": "Bellevue, Washington",
+        "id": 7,
+        "regionId": 2
+    },
+    {
+        "name": "Bellevue South, Washington",
+        "id": 8,
+        "regionId": 2
+    },
+    {
+        "name": "Sammamish Valley, Washington",
+        "id": 9,
+        "regionId": 2
+    },
+    {
+        "name": "Bothell, Washington",
+        "id": 10,
+        "regionId": 2
+    },
+    {
+        "name": "Seattle North, Washington",
+        "id": 11,
+        "regionId": 3
+    },
+    {
+        "name": "Lynnwood, Washington",
+        "id": 12,
+        "regionId": 3
+    },
+    {
+        "name": "Lake Stevens, Washington",
+        "id": 13,
+        "regionId": 3
+    },
+    {
+        "name": "Everett, Washington",
+        "id": 14,
+        "regionId": 3
+    },    {
+        "name": "Marysville, Washington",
+        "id": 15,
+        "regionId": 3
+    },    {
+        "name": "Arlington, Washington",
+        "id": 16,
+        "regionId": 3
+    }
+
+
+
+
+
+]
