@@ -2,36 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-
-    <!-- Metro UI -->
-    <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4/css/metro-all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" >
-    <link href="./styles/base.css" rel="stylesheet">
-    <link href="https://cdn.korzh.com/metroui/v4/css/metro-icons.css" rel="stylesheet">
-    <title>LDS Dance Card</title>
+    <script src="vite.config.js"></script>
+    {{> head}}
 </head>
 
 <body>
     <header>
+        {{> header}}
     </header>
-        <aside class="sidebar pos-absolute z-2" data-role="sidebar" data-toggle="#sidebar-toggle-4" id="sb4" data-shift=".shifted-content-2" data-static-shift=".shifted-content-2" data-static="md">
-        <ul class="sidebar-menu signed-in">
-            <li><a href="main.html"><span class="mif-home icon"> home</span></a></li>
-            <li><a href="account_info.html"><span class="mif-user icon"></span>account info</a></li>
-            <li><a href="schedule.html"><span class="mif-calendar icon"></span>schedule</a></li>
-            <li><a href="standards.html"><span class="mif-book-reference icon"></span>standards</a></li>
-            <li class="divider"></li>
-            <li class="admin"><a href="admin.html"><span class="mif-cabinet icon"></span>admin</a></li>
-            <li><a href="sign_out.html"><span class="mif-user-secret icon"></span>sign out</a></li>
-        </ul>
-        <ul class="sidebar-menu signed-out">
-            <li><a href="index.html"><span class="mif-home icon"> home</span></a></li>
-            <li><a href="schedule.html"><span class="mif-calendar icon"></span>schedule</a></li>
-            <li class="divider"></li>
-            <li><a href="sign_in.html"><span class="mif-user-secret icon"></span>sign in</a></li>
-        </ul>
-    </aside>
+    {{> aside}}
     <div class="shifted-content-2 h-100 p-ab">
         <div class="appbar pos-absolute bg-cyan z-1" data-role="appbar">
             <button class="app-bar-item c-pointer" id="sidebar-toggle-4">
