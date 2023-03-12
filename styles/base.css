@@ -2,6 +2,10 @@ body {
     background-color: #000;
 }
 
+.signed-in {
+    display: none;
+}
+
 a, p, h1, h2, h3 {
     color: #fff;
 }
