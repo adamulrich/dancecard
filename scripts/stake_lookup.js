@@ -31,7 +31,7 @@ async function createStakes() {
     });
     innerHTML += "</ul>"
     var content = $(innerHTML);
-    content.appendTo($("#stake-list"));
+    content.appendTo($("#stake-lookup"));
     
 
 }

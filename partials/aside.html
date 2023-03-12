@@ -1,4 +1,11 @@
-<aside class="sidebar pos-absolute z-2" data-role="sidebar" data-toggle="#sidebar-toggle-4" id="sb4" data-shift=".shifted-content-2" data-static-shift=".shifted-content-2" data-static="md">
+<aside class="sidebar pos-absolute z-2" data-role="sidebar" data-toggle="#sidebar-toggle-3" id="sb3" data-shift=".shifted-content">
+    <div class="sidebar-header">
+        <div class="avatar">
+            <img data-role="gravatar" data-email="foo@bar.com" data-default="robohash">
+        </div>
+        <span class="title fg-blue">User Name</span>
+        <span class="subtitle fg-blue"></span>
+    </div>
     <ul class="sidebar-menu signed-in">
         <li><a href="main.html"><span class="mif-home icon"> home</span></a></li>
         <li><a href="account_info.html"><span class="mif-user icon"></span>account info</a></li>
@@ -15,3 +22,9 @@
         <li><a href="sign_in.html"><span class="mif-user-secret icon"></span>sign in</a></li>
     </ul>
 </aside>
+<div class="shifted-content h-100 p-ab">
+    <div class="app-bar pos-absolute bg-blue z-1" data-role="appbar">
+        <button class="app-bar-item c-pointer" id="sidebar-toggle-3">
+            <span class="mif-menu fg-white"></span>
+        </button>
+    </div>
