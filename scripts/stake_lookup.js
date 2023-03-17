@@ -1,4 +1,3 @@
-import Data from './getJson.mjs';
 import ExternalServices, { routeList } from './external_services.mjs';
 
 
