@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <script type='module' src="vite.config.js"></script> -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script type='module' src="./scripts/account.js"></script>
+    <link rel="stylesheet" type="text/css" href="/styles/login.css" />
+    {{> head}}
+</head>
+
+<body>
+    {{> aside}}
+
+    {{> header}}
+
+        <!-- <div class='tile' id="sign-in-out" data-role="tile" data-size="large">
+            <span id ='sign-in-out-span' class="branding-bar">create account or log in</span>
+            <span class="mif-sign-pen mif-4x icon"></span>
+        </div> -->
+
+    <button id="btn-login" disabled="true">Log in</button>
+    <button id="btn-logout" disabled="true">Log out</button>
+    
+    <div class="hidden" id="gated-content">
+        <p>
+          You're seeing this content because you're currently
+          <strong>logged in</strong>.
+        </p>
+        <label>
+          Access token:
+          <pre id="ipt-access-token"></pre>
+        </label>
+        <label>
+          User profile:
+          <pre id="ipt-user-profile"></pre>
+        </label>
+      </div>
+
+    {{> footer}}
+    
+    
+</body>
+
+</html>
+
+    

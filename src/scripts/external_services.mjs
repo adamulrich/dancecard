@@ -1,4 +1,4 @@
-const baseURL = import.meta.env['VITE_CONTENT_SERVER'];
+const baseURL = import.meta.env.VITE_CONTENT_SERVER;
 
 export const routeList = {
     stake: '/stake',

@@ -8,10 +8,11 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "vite": "^4.1.0"
-  },
   "dependencies": {
+    "@auth0/auth0-spa-js": "^2.0.4",
+    "path": "^0.12.7",
+    "rollup": "^3.19.1",
+    "vite": "4.1.0",
     "vite-plugin-handlebars": "^1.6.0"
   }
 }
