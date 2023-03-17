@@ -7,12 +7,11 @@
 </head>
 
 <body>
-    <header>
-        {{> header}}
-    </header>
     {{> aside}}
+
+    {{> header}}
+
         <div class='main-content'>
-            <h1>LDS Dance Card</h1>
             <a href="stake_lookup.html">
                 <div class='tile' id="schedule" data-role="tile" data-size="large">
                     <span class="branding-bar">Schedule quick lookup</span>
@@ -26,16 +25,12 @@
                 </div>
             </a>
         </div>
-        <section class="bottom">
-            {{> footer}}
-        </section>
     
-    </div>
-
-    <!-- Metro UI -->
-    <script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js"></script>
+    {{> footer}}
+    
 </body>
-<footer>
-    
-</footer>
+
 </html>
+
+    
+    

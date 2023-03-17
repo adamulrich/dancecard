@@ -2,26 +2,21 @@
 <html lang="en">
 
 <head>
-{{> head}}
+    <script src="vite.config.js"></script>
+    {{> head}}
 </head>
 
 <body>
-    <header>
-        {{> header}}
-    </header>
     {{> aside}}
-    <div class="shifted-content-2 h-100 p-ab">
+
+    {{> header}}
         <div id='stake-lookup' class="main-content shifted-content-2 h-100 p-ab">
             <h1>Stake Lookup</h1>
         </div>
-            <!-- Metro UI -->
-            <script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js"></script>
             <script type='module' src="scripts/stake_lookup.js"></script>
-    </div>
-    <section class="bottom">
-        {{> footer}}
-    </section>
-    
+
+    {{> footer}}
+
 </body>
 
 </html>

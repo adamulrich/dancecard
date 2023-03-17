@@ -68,10 +68,12 @@ div.blue-color-block {
     border-radius: 0.5rem;
 }
 
-.bottom {
+footer {
     background-color: #1ba1e2;
     font-size: smaller;
     color: white;
     display: block;
     text-align: center;
 }
+
+

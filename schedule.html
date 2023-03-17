@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-{{> head}}
+    <script src="vite.config.js"></script>
+    {{> head}}
 </head>
 
 <body>
-    <header>
-        {{> header}}
-    </header>
     {{> aside}}
-    <div class="shifted-content-2 h-100 p-ab">
+
+    {{> header}}
+
         <div id='stake-info-box' class="skill-box">
             <div class="header bg-cyan fg-white">
                 <!-- <img src="images/jek_vorobey.jpg" class="avatar"> -->
@@ -25,17 +26,11 @@
                 </li>
             </ul>
         </div>
-        <section class="bottom">
-            {{> footer}}
-        </section>
-            <!-- Metro UI -->
-        <script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js"></script>
 
-            <!-- Metro UI -->
-            <script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js"></script>
-            <script type='module' src="./scripts/schedule.js"></script>
-    </div>
+        <script type='module' src="./scripts/schedule.js"></script>
     
-</body>
-
-</html>
+        {{> footer}}
+    
+    </body>
+    
+    </html>
