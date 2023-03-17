@@ -66,5 +66,12 @@ div.blue-color-block {
     font-weight: 500;
     padding: 0 10px;
     border-radius: 0.5rem;
+}
 
+.bottom {
+    background-color: #1ba1e2;
+    font-size: smaller;
+    color: white;
+    display: block;
+    text-align: center;
 }
