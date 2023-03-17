@@ -15,7 +15,7 @@ export default defineConfig({
 
   build: {
       minify: false,
-      outDir: '../dist',
+      outDir: './dist',
       rollupOptions: {
           input: {
           account: resolve(__dirname, 'account.html'),
