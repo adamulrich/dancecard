@@ -1,15 +1,13 @@
 import Data from './getJson.mjs';
-
+import ExternalServices, { routeList } from './external_services.mjs';
 
 
 async function createStakes() {
 
-    const stakesJson = await new Data('stake').getData();
+    const stake = new ExternalServices(routeList.stake);
+    const stakesJson = await stake.getData(routeList.stake);
     const data = { "header": {}, "template": "<%this.name%>",
                 "data": stakesJson }
-
-
-
 
     let innerHTML = `<ul id="stakes"
     data-role="list"
@@ -24,7 +22,7 @@ async function createStakes() {
     stakesJson.forEach(stake => {
         innerHTML += `
         <li >
-            <a href="schedule.html?stake-id=${stake.id}&region-id=${stake.regionId}">
+            <a href="schedule.html?stake-id=${stake.stakeId}&region-id=${stake.regionId}">
                 <h3 class="name">${stake.name}</h3>
             </a>
         </li>`

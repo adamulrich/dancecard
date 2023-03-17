@@ -1,5 +1,8 @@
 body {
     background-color: #000;
+    width: 100%;
+    max-width: 600px;
+
 }
 
 .signed-in {
@@ -17,7 +20,8 @@ div.main-content {
 div.tile {
     margin: 10px;
 }
-container {width: 100%;}
+container {width: 100%;
+            max-width: 500px;}
 
 @media (min-width: 576px) {
     .container {
@@ -47,4 +51,20 @@ container {width: 100%;}
     .container {
         max-width: 1360px;
     }
+}
+
+div.blue-color-block {
+    display: block;
+    width: 100%;
+    background-color: black;
+}
+
+.align-right { 
+    float: right;
+    background-color: #1ba1e2;
+    color: white;
+    font-weight: 500;
+    padding: 0 10px;
+    border-radius: 0.5rem;
+
 }

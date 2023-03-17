@@ -24,8 +24,7 @@ export default class ExternalServices {
 
     async getData(route) {
         const response = await fetch(baseURL + `${route}`);
-        const data = await convertToJson(response);
-        return data.Result;
+        return await convertToJson(response);
     }
 
     async postData(route, data) {
@@ -98,5 +97,3 @@ export default class ExternalServices {
     
 
 }
-
-ExternalServices.getData(routeList.schedule)
