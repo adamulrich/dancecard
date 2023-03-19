@@ -21,6 +21,7 @@ export default defineConfig({
       rollupOptions: {
           input: {
           account: resolve(__dirname, './src/account.html'),
+          create_account: resolve(__dirname, './src/create_account.html'),
           create_ward: resolve(__dirname, './src/create_account_ward_lookup.html'),
           create_stake: resolve(__dirname, './src/create_account_stake_lookup.html'),
           home: resolve(__dirname, './src/index.html'),
