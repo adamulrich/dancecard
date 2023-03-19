@@ -3,6 +3,7 @@ const baseURL = import.meta.env.VITE_CONTENT_SERVER;
 export const routeList = {
     stake: '/stake',
     ward: '/ward',
+    wards: '/wards',
     user: '/user',
     region: '/region',
     schedule: '/schedule',
@@ -15,16 +16,21 @@ async function convertToJson(res) {
     if (res.ok) {
         return result;
     } 
+
 }
 
 export default class ExternalServices {
-    constructor(category) {
-        this.category = category;
+    constructor() {
+        
     }
 
     async getData(route) {
         const response = await fetch(baseURL + `${route}`);
-        return await convertToJson(response);
+        if (response.ok) {
+            return await convertToJson(response);
+        } else {
+            return null;
+        }
     }
 
     async postData(route, data) {
@@ -38,9 +44,9 @@ export default class ExternalServices {
             body: JSON.stringify(data)
         }
         try {
-            res = await fetch(baseURL + route, options).then();
+            res = await fetch(baseURL + route, options);
             if (res.ok) {
-                result = await res.json();
+                result = res; //await res.json();
             } else {
             
             }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+</head>
+
+<body>
+    {{> aside}}
+
+    {{> header}}
+    <h1>Create An Account</h1>
+    <form id="create_account_form">
+        <input id='name' class="input-large" name="name" type="text" data-role="input" data-prepend="Name: ">
+        <input id='email' class="input-large" name="email" type="text" data-role="input" data-prepend="Email: ">
+        <input id='phone' class="input-large" name="phone" type="text" data-role="input" data-prepend="Phone: ">
+        <input id='parent_name' class="input-large" name="parent_name" type="text" data-role="input" data-prepend="Parent Name: ">
+        <input id='parent_phone' class="input-large" name="parent_phone" type="text" data-role="input" data-prepend="Parent Phone: ">
+        <div id='user-data-box' class="skill-box">
+            <ul class="skills">
+                <li>
+                    <span>Region</span>
+                    <span id="region-span" class="align-right bg-cyan fg-white"></span>
+                </li>
+                <li>
+                    <span>Stake</span>
+                    <span id="stake-span" class="align-right bg-cyan fg-white"></span>
+                </li>
+                <li>
+                    <span>Ward</span>
+                    <span id="ward-span" class="align-right bg-cyan fg-white"></span>
+                </li>
+            </ul>
+        </div>
+    
+        <input hidden id='stake-id' name="stakeId">
+        <input hidden id='ward-id' name="wardId">
+        <input hidden id='region-id' name="regionId">
+        <input hidden id='user-sub' name="userSub">
+
+        <button id="create_account_btn" class="button success input-large">Create Account</button>
+        <input id="cancel_btn" type="button" class="button input-large" value="Cancel">
+    </form>
+    {{> footer}}
+    <script type="module" src="scripts/create_account.js"></script>
+</body>
+
+</html>
+
+    

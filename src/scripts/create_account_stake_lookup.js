@@ -21,7 +21,7 @@ async function createStakes() {
     stakesJson.forEach(stake => {
         innerHTML += `
         <li >
-            <a href="schedule.html?stake-id=${stake.stakeId}&region-id=${stake.regionId}">
+            <a href="create_account_ward_lookup.html?stake-id=${stake.stakeId}&region-id=${stake.regionId}">
                 <h3 class="name">${stake.name}</h3>
             </a>
         </li>`

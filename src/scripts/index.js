@@ -1,5 +1,5 @@
 // if there is localstorage data, go to the account main page
-import { getLocalStorage } from "./constants";
+import { getLocalStorage } from "./utils";
 
 
 let accountInfo = getLocalStorage();

@@ -26,7 +26,7 @@ async function createSchedule() {
 
 
     //load stake data 
-    const stake = new ExternalServices(routeList.stake);
+    const stake = new ExternalServices();
     const stakeJson = await stake.getData(`${routeList.stake}/${stakeId}` );
     const region = await stake.getData(`${routeList.region}/${regionId}`);
     
