@@ -1,4 +1,4 @@
-import { createMessage } from './utils.mjs';
+import { createMessage } from './utils.js';
 import ExternalServices, { routeList } from './external_services.mjs';
 
 let stakeId = 0;

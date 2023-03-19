@@ -1,5 +1,10 @@
 export const localStorageKey = "dance-card";
 
+export function createMessage(message) {
+    return `<h3>${message}<h3>`
+}
+
+
 export function getLocalStorage() {
     const key = localStorageKey;
     try {
