@@ -5,5 +5,5 @@ import { getLocalStorage } from "./utils";
 let accountInfo = getLocalStorage();
 
 if (accountInfo) {
-    window.location.href = "main.html";
+    // window.location.href = "main.html";
 }

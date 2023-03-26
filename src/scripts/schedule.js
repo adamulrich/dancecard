@@ -1,5 +1,6 @@
 import { createMessage } from './utils.js';
 import ExternalServices, { routeList } from './external_services.mjs';
+import { getLocalStorage } from './utils.js';
 
 let stakeId = 0;
 let regionId = 0;
@@ -13,6 +14,12 @@ async function createSchedule() {
         regionId = new URLSearchParams(window.location.search).get('region-id');
 
         if (!stakeId || !regionId) {
+
+            const userData = getLocalStorage();
+            if (userData.regionId) {
+                regionId = userData.regionId;
+                stakeId = userData.stakeId;
+            }
             $(createMessage("Invalid url.")).appendTo($('body'));
 
         }

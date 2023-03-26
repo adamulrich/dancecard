@@ -1,6 +1,7 @@
 import ExternalServices, { routeList } from './external_services.mjs';
-import { getLocalStorage, setLocalStorage} from "./utils"; 
+import { getLocalStorage, setLocalStorage, } from "./utils"; 
 
+let wardData = {};
 
 
 async function getDataForWard() {
@@ -8,7 +9,7 @@ async function getDataForWard() {
     const regionId = new URLSearchParams(window.location.search).get('region-id');
     const wardId = new URLSearchParams(window.location.search).get('ward-id');
 
-    const wardData = await new ExternalServices().getData(`${routeList.ward}/${wardId}`);
+    wardData = await new ExternalServices().getData(`${routeList.ward}/${wardId}`);
 
     const userAuthData = getLocalStorage();
 
@@ -40,18 +41,22 @@ async function createAccount(){
             parentPhone: document.getElementById('parent_phone').value,
             regionAdmin: false,
             cardIsSigned: false
-        }
-
-    const result = await user.postData(routeList.user, newUser);
-    console.log(result);
-    if (result.ok) {
-        console.log("create_success");
-        //success, write to localStorage
+    }
+    try {
+        const result = await user.postData(routeList.user, newUser).then()
+        console.log(`create_success: ${result}`);
+        
+        //success, write to localStorage with name data
+        newUser.regionName = wardData.regionName;
+        newUser.stakeName = wardData.stakeName;
+        newUser.wardName = wardData.name;
+        
         setLocalStorage(newUser);
         // load main page
-        //window.location.href = 'main.html';
-    } else  {
-
+        window.location.href = 'main.html';
+    }
+    catch (e){
+     console.log(e)   
     }
     
 }

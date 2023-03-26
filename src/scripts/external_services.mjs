@@ -1,4 +1,5 @@
 const baseURL = import.meta.env.VITE_CONTENT_SERVER;
+import { getCookie, getLocalStorage, localStorageToken } from "./utils"; 
 
 export const routeList = {
     stake: '/stake',
@@ -20,12 +21,16 @@ async function convertToJson(res) {
 }
 
 export default class ExternalServices {
-    constructor() {
-        
-    }
+    
 
     async getData(route) {
-        const response = await fetch(baseURL + `${route}`);
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+        const response = await fetch(baseURL + `${route}`, options);
         if (response.ok) {
             return await convertToJson(response);
         } else {
@@ -36,23 +41,30 @@ export default class ExternalServices {
     async postData(route, data) {
         let res = {};
         let result = '';
+        let token = getLocalStorage(localStorageToken);
+        console.log(token);
         const options = {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            oidc: getLocalStorage()
         }
         try {
+            console.log(baseURL + route);
+            console.log(options);
             res = await fetch(baseURL + route, options);
             if (res.ok) {
-                result = res; //await res.json();
+                result = await res.json();
             } else {
-            
+                console.log(`error: ${res}`)
             }
             
         } catch (error) {
-            throw { name: 'servicesError', message: JSON.stringify(res) };
+            console.log(error)
+            throw { name: 'servicesError', message: JSON.stringify(error) };
         };
         return result;
     }
@@ -62,6 +74,7 @@ export default class ExternalServices {
         let result = '';
         const options = {
             method: 'PUT',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -85,7 +98,8 @@ export default class ExternalServices {
         let res = {};
         let result = '';
         const options = {
-            method: 'DELETE'}
+            method: 'DELETE',
+        }
         try {
             res = await fetch(`${baseURL}${route}/:${id}`, options).then();
             if (res.ok) {

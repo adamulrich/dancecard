@@ -1,12 +1,12 @@
 export const localStorageKey = "dance-card";
+export const localStorageToken = 'token';
 
 export function createMessage(message) {
     return `<h3>${message}<h3>`
 }
 
 
-export function getLocalStorage() {
-    const key = localStorageKey;
+export function getLocalStorage(key = localStorageKey) {
     try {
         return JSON.parse(localStorage.getItem(key));
     }
@@ -17,8 +17,7 @@ export function getLocalStorage() {
     }
 }
 // save data to local storage
-export function setLocalStorage(data) {
-    const key = localStorageKey;
+export function setLocalStorage(data, key=localStorageKey) {
     try {
         localStorage.setItem(key, JSON.stringify(data));
     }
@@ -28,3 +27,20 @@ export function setLocalStorage(data) {
         localStorage.removeItem(key);
     } 
 }
+
+
+export function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }

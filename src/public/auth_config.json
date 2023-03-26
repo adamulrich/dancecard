@@ -1,4 +1,5 @@
 {
-    "domain": "dev-vukawrenb1tvjct0.us.auth0.com",
-    "clientId": "uLcoWIof5w2vkxBgdtAoIKt3fFcCrVcm"
-  }
+  "domain": "dev-vukawrenb1tvjct0.us.auth0.com",
+  "clientId": "91EjseKCfE4RTIx7SSoRHe2SFMg2QDcf",
+  "audience": "http://ldsdancecard.onrender.com"
+}
