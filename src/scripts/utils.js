@@ -17,7 +17,7 @@ export function getLocalStorage(key = localStorageKey) {
     }
 }
 // save data to local storage
-export function setLocalStorage(data, key=localStorageKey) {
+export function setLocalStorage(data, key = localStorageKey) {
     try {
         localStorage.setItem(key, JSON.stringify(data));
     }
@@ -25,7 +25,10 @@ export function setLocalStorage(data, key=localStorageKey) {
         console.log(error);
         // cart is corrupted, remote it.
         localStorage.removeItem(key);
-    } 
+    }
+}
+export function deleteLocalStorage(key = localStorageKey) {
+    localStorage.removeItem(key);
 }
 
 

@@ -1,5 +1,5 @@
 
-import { getLocalStorage, setLocalStorage, localStorageToken } from './utils.js';
+import { getLocalStorage, setLocalStorage, localStorageToken, deleteLocalStorage } from './utils.js';
 
 import { createAuth0Client}  from '@auth0/auth0-spa-js';
 import ExternalServices, { routeList } from "./external_services.mjs";
@@ -45,6 +45,7 @@ window.onload = async () => {
     
     if (query.includes('sign-out')) {
         logout();
+        
     }
 
 
@@ -160,6 +161,7 @@ export async function logout() {
             returnTo: window.location.origin
         }
     });
+    deleteLocalStorage();
 };
 
 document.getElementById("btn-login").addEventListener('click', login);
