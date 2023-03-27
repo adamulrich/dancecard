@@ -5,6 +5,10 @@ body {
 
 }
 
+.admin.hidden {
+    display: none;
+}
+
 .disabled {
     display: none;
 }
