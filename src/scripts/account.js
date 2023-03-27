@@ -1,5 +1,5 @@
 
-import { getLocalStorage, setLocalStorage, localStorageToken, deleteLocalStorage } from './utils.js';
+import { getLocalStorage, setLocalStorage, deleteLocalStorage } from './utils.js';
 
 import { createAuth0Client}  from '@auth0/auth0-spa-js';
 import ExternalServices, { routeList } from "./external_services.mjs";
@@ -125,16 +125,7 @@ const updateUI = async () => {
     if (isAuthenticated) {
         document.getElementById("gated-content").classList.remove("hidden");
         accessToken = await auth0Client.getTokenSilently();
-        console.log(await auth0Client.getIdTokenClaims());
-        console.log(await auth0Client.getUser());
-        // const differentAudienceOptions = {
-        //     authorizationParams: {
-        //       audience: 'http://ldsdancecard.onrender.com',
-        //       redirect_uri: 'http://127.0.0.1:5173/sign_in.html'
-        //     }};
-        // const token = await auth0Client.getTokenSilently(differentAudienceOptions);
 
-        setLocalStorage(localStorageToken,accessToken);
         document.getElementById("ipt-access-token").innerHTML = accessToken;
 
         document.getElementById("ipt-user-profile").textContent = JSON.stringify(

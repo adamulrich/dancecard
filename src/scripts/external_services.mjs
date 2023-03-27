@@ -1,5 +1,5 @@
 const baseURL = import.meta.env.VITE_CONTENT_SERVER;
-import { getCookie, getLocalStorage, localStorageToken } from "./utils"; 
+import { getCookie, getLocalStorage } from "./utils"; 
 
 export const routeList = {
     stake: '/stake',
@@ -41,13 +41,10 @@ export default class ExternalServices {
     async postData(route, data) {
         let res = {};
         let result = '';
-        let token = getLocalStorage(localStorageToken);
-        console.log(token);
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
             },
             body: JSON.stringify(data),
             oidc: getLocalStorage()
