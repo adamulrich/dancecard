@@ -23,10 +23,10 @@ export default defineConfig({
           input: {
           
           
-          create_ward: resolve(__dirname, './src/create_account_ward_lookup.html'),
           create_stake: resolve(__dirname, './src/create_account_stake_lookup.html'),
+          create_ward: resolve(__dirname, './src/create_account_ward_lookup.html'),
           create_account: resolve(__dirname, './src/create_account.html'),
-          home: resolve(__dirname, './src/index.html'),
+          index: resolve(__dirname, './src/index.html'),
           main_account_info: resolve(__dirname, './src/main_account_info.html'),
           main_standards: resolve(__dirname, './src/main_standards.html'),
           main: resolve(__dirname, './src/main.html'),
@@ -40,8 +40,9 @@ export default defineConfig({
           create_ward_js: resolve(__dirname, './src/scripts/create_account_ward_lookup.js'),
           create_account_js: resolve(__dirname, './src/scripts/create_account.js'),
           external_service_mjs: resolve(__dirname, './src/scripts/external_services.mjs'),
-          home_js: resolve(__dirname, './src/scripts/index.js'),
+          index_js: resolve(__dirname, './src/scripts/index.js'),
           main_account_info_js: resolve(__dirname, './src/scripts/main_account_info.js'),
+          main_js: resolve(__dirname, './src/scripts/main.js'),
           schedule_js: resolve(__dirname, './src/scripts/schedule.js'),
           stake_lookup_js: resolve(__dirname, './src/scripts/stake_lookup.js'),
           standards_js: resolve(__dirname, './src/scripts/standards.js'),
