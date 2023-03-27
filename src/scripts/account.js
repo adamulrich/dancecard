@@ -5,28 +5,12 @@ import { createAuth0Client}  from '@auth0/auth0-spa-js';
 import ExternalServices, { routeList } from "./external_services.mjs";
 let accessToken = '';
 
-function checkAccount() {
-
-    // check local storage for account info
-    const accountData = getLocalStorage()
-
-    if (accountData) {
-        window.location.href = 'main.html';
-
-    } else {
-        // stay on main page.
-    }
-}
-
-checkAccount();
-
 let auth0Client = null;
 const fetchAuthConfig = () => fetch("/auth_config.json");
 
 const configureClient = async () => {
     const response = await fetchAuthConfig();
     const config = await response.json();
-    console.log(config);
     auth0Client = await createAuth0Client({
         domain: config.domain,
         clientId: config.clientId,
@@ -39,16 +23,18 @@ const configureClient = async () => {
 window.onload = async () => {
 
     const query = window.location.search;
+    console.log(query);
 
     await configureClient();
 
     
     if (query.includes('sign-out')) {
         logout();
-        
+        window.location.href = 'index.html';
     }
 
-    
+    checkAccount();
+
 
     updateUI();
 
@@ -155,6 +141,19 @@ export async function logout() {
     });
     deleteLocalStorage();
 };
+
+function checkAccount() {
+
+    // check local storage for account info
+    const accountData = getLocalStorage()
+
+    if (accountData) {
+        window.location.href = 'main.html';
+
+    } else {
+        // stay on index page.
+    }
+}
 
 document.getElementById("btn-login").addEventListener('click', login);
 document.getElementById("btn-logout").addEventListener('click', logout);
