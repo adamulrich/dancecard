@@ -35,6 +35,7 @@ export default defineConfig({
           stake_lookup: resolve(__dirname, './src/stake_lookup.html'),
           
           account_js: resolve(__dirname, './src/scripts/account.js'),
+          aside_js: resolve(__dirname, './src/scripts/aside.js'),
           create_stake_js: resolve(__dirname, './src/scripts/create_account_stake_lookup.js'),
           create_ward_js: resolve(__dirname, './src/scripts/create_account_ward_lookup.js'),
           create_account_js: resolve(__dirname, './src/scripts/create_account.js'),
@@ -45,6 +46,7 @@ export default defineConfig({
           stake_lookup_js: resolve(__dirname, './src/scripts/stake_lookup.js'),
           standards_js: resolve(__dirname, './src/scripts/standards.js'),
           utils_js: resolve(__dirname, './src/scripts/utils.js'),
+
 
           // partial_aside: resolve(__dirname, '/partials/aside.html'),
           // partial_footer: resolve(__dirname, '/partials/footer.html'),

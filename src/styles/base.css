@@ -5,8 +5,12 @@ body {
 
 }
 
-.signed-in {
+.disabled {
     display: none;
+}
+
+.enabled {
+    display: initial;
 }
 
 a, p, h1, h2, h3 {

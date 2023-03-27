@@ -2,21 +2,21 @@
 data-toggle="#sidebar-toggle-3" id="sb3" data-shift=".shifted-content">
     <div class="sidebar-header">
         <div class="avatar">
-            <img data-role="gravatar" data-email="foo@bar.com" data-default="robohash" alt="robot">
+            <img data-role="gravatar" src='robohash' data-email="foo@bar.com" data-default="robohash" alt="robot">
         </div>
         <span class="title fg-blue">User Name</span>
         <span class="subtitle fg-blue"></span>
     </div>
-    <ul class="sidebar-menu signed-in">
+    <ul id='signed-in' class="sidebar-menu">
         <li><a href="main.html"><span class="mif-home icon"> home</span></a></li>
-        <li><a href="account_info.html"><span class="mif-user icon"></span>account info</a></li>
+        <li><a href="main_account_info.html"><span class="mif-user icon"></span>account info</a></li>
         <li><a href="schedule.html"><span class="mif-calendar icon"></span>schedule</a></li>
-        <li><a href="standards.html"><span class="mif-book-reference icon"></span>standards</a></li>
+        <li><a href="main_standards.html"><span class="mif-book-reference icon"></span>standards</a></li>
         <li class="divider"></li>
         <li class="admin"><a href="admin.html"><span class="mif-cabinet icon"></span>admin</a></li>
-        <li><a href="sign_out.html"><span class="mif-user-secret icon"></span>sign out</a></li>
+        <li><a href="sign_in.html?sign-out=1"><span class="mif-user-secret icon"></span>sign out</a></li>
     </ul>
-    <ul class="sidebar-menu signed-out">
+    <ul id="signed-out" class="sidebar-menu">
         <li><a href="index.html"><span class="mif-home icon"> home</span></a></li>
         <li><a href="stake_lookup.html"><span class="mif-calendar icon"></span>schedule</a></li>
         <li class="divider"></li>
