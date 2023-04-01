@@ -15,3 +15,9 @@ document.getElementById('parent-phone').innerText = accountData.parentPhone;
 document.getElementById('signature').innerText = accountData.cardIsSigned;
 
 
+document.getElementById('edit-account').addEventListener('click', editAccount);
+
+
+function editAccount() {
+    window.location.href = 'edit_account.html';
+ }

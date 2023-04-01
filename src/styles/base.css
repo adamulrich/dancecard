@@ -91,3 +91,12 @@ footer {
 div.tile {
     width: 96%;
 }
+
+button {
+    margin: 10px;
+}
+
+button#change-ward {
+    margin-top: -5px;
+    height: 30px;
+}

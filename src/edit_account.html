@@ -10,8 +10,8 @@
     {{> aside}}
 
     {{> header}}
-    <h1>Create An Account</h1>
-    <form id="create_account_form">
+    <h1>Edit Account</h1>
+    <form id="edit_account_form">
         <input id='name' class="input-large" name="name" type="text" data-role="input" data-prepend="Name: ">
         <input id='email' class="input-large" name="email" type="text" data-role="input" data-prepend="Email: ">
         <input id='phone' class="input-large" name="phone" type="text" data-role="input" data-prepend="Phone: ">
@@ -30,6 +30,7 @@
                 <li>
                     <span>Ward</span>
                     <span id="ward-span" class="align-right bg-cyan fg-white"></span>
+                    <span><button id="change-ward" class="button alert align-right input-small">Change Ward</button></span>
                 </li>
             </ul>
         </div>
@@ -38,12 +39,14 @@
         <input hidden id='ward-id' name="wardId">
         <input hidden id='region-id' name="regionId">
         <input hidden id='user-sub' name="userSub">
+        <input hidden id='card-is-signed' name="cardIsSigned">
+        <input hidden id='region-admin' name="regionAdmin">
 
-        <button id="create_account_btn" class="button success input-large">Create Account</button>
-        <input id="cancel_btn" type="button" class="button input-large" value="Cancel">
+        <button id="edit_account_btn" class="button success input-large">Save</button>
+        <button id="cancel_btn" class="button secondary input-large">Cancel</button>
     </form>
     {{> footer}}
-    <script type="module" src="scripts/create_account.js"></script>
+    <script type="module" src="scripts/edit_account.js"></script>
 </body>
 
 </html>

@@ -72,6 +72,7 @@ document.getElementById("create_account_btn").addEventListener('click', function
 
 document.getElementById("cancel_btn").addEventListener('click', function(event)  {
     // cancel, remove localstorage, sign out
+    event.preventDefault();
     setLocalStorage(null);
     window.location.href = 'sign_in.html?sign-out=1'
 })

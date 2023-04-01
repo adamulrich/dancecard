@@ -69,16 +69,17 @@ export default class ExternalServices {
     async putData(route, data, id) {
         let res = {};
         let result = '';
+        let uriId = encodeURIComponent(id);
         const options = {
             method: 'PUT',
-            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            oidc: getLocalStorage()
         }
         try {
-            res = await fetch(`${baseURL}${route}/:${id}`, options).then();
+            res = await fetch(`${baseURL}${route}/${uriId}`, options);
             if (res.ok) {
                 result = await res.json();
             } else {
@@ -86,7 +87,7 @@ export default class ExternalServices {
             }
             
         } catch (error) {
-            throw { name: 'servicesError', message: JSON.stringify(res) };
+            throw { error };
         };
         return result;
     }
@@ -98,7 +99,7 @@ export default class ExternalServices {
             method: 'DELETE',
         }
         try {
-            res = await fetch(`${baseURL}${route}/:${id}`, options).then();
+            res = await fetch(`${baseURL}${route}/:${id}`, options);
             if (res.ok) {
                 result = await res.json();
             } else {

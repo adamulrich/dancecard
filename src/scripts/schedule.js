@@ -20,14 +20,14 @@ async function createSchedule() {
                 regionId = userData.regionId;
                 stakeId = userData.stakeId;
             }
-            $(createMessage("Invalid url.")).appendTo($('body'));
+            // $(createMessage("Invalid url.")).appendTo($('body'));
 
         }
 
     } catch (error) {
         // no query params, direct to home page
 
-        $(createMessage("Invalid url.")).appendTo($('body'));
+        // $(createMessage("Invalid url.")).appendTo($('body'));
         exit;
     }
 
