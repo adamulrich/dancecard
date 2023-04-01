@@ -15,7 +15,7 @@ const configureClient = async () => {
         domain: config.domain,
         clientId: config.clientId,
         authorizationParams: {
-            redirect_uri: 'http://127.0.0.1:5173/sign_in.html'
+            redirect_uri: `${window.location.origin}/sign_in.html`
           }
     });
 };
@@ -29,7 +29,7 @@ window.onload = async () => {
 
     
     if (query.includes('sign-out')) {
-        logout();
+        await logout();
         window.location.href = 'index.html';
     }
 
@@ -98,29 +98,33 @@ window.onload = async () => {
 };
 
 
-
 const updateUI = async () => {
 
     const isAuthenticated = await auth0Client.isAuthenticated();
 
-
-    document.getElementById("btn-logout").disabled = false; //!isAuthenticated;
-    document.getElementById("btn-login").disabled = false; //isAuthenticated;
-
-    // NEW - add logic to show/hide gated content after authentication
     if (isAuthenticated) {
-        document.getElementById("gated-content").classList.remove("hidden");
-        accessToken = await auth0Client.getTokenSilently();
-
-        document.getElementById("ipt-access-token").innerHTML = accessToken;
-
-        document.getElementById("ipt-user-profile").textContent = JSON.stringify(
-            await auth0Client.getUser()
-        );
-
+        document.getElementById("btn-logout").classList.remove('disabled');
+        document.getElementById("btn-login").classList.add('disabled');
     } else {
-        document.getElementById("gated-content").classList.add("hidden");
+        document.getElementById("btn-login").classList.remove('disabled');
+        document.getElementById("btn-logout").classList.add('disabled');
     }
+
+
+    // EW - add logic to show/hide gated content after authentication
+    // if (isAuthenticated) {
+    //     document.getElementById("gated-content").classList.remove("hidden");
+    //     accessToken = await auth0Client.getTokenSilently();
+
+    //     document.getElementById("ipt-access-token").innerHTML = accessToken;
+
+    //     document.getElementById("ipt-user-profile").textContent = JSON.stringify(
+    //         await auth0Client.getUser()
+    //     );
+
+    // } else {
+    //     document.getElementById("gated-content").classList.add("hidden");
+    // }
 };
 
 export async function login() {

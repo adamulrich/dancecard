@@ -19,8 +19,17 @@
             <span class="mif-sign-pen mif-4x icon"></span>
         </div> -->
 
-    <button id="btn-login" disabled="true">Log in</button>
-    <button id="btn-logout" disabled="true">Log out</button>
+    <div class='tile button success' id="btn-login" data-role="tile" data-size="wide">
+        <span class="branding-bar">log in</span>
+        <span class="mif-checkmark mif-4x icon"></span>
+    </div>
+    <div class='tile button alert' id="btn-logout" data-role="tile" data-size="wide">
+        <span class="branding-bar">log out</span>
+        <span class="mif-cross mif-4x icon"></span>
+    </div>
+
+    <!-- <button class="button success" id="btn-login" disabled="true">Log in</button>
+    <button class="button alert" id="btn-logout" disabled="true">Log out</button>
     
     <div class="hidden" id="gated-content">
         <p>
@@ -35,7 +44,7 @@
           User profile:
           <pre id="ipt-user-profile"></pre>
         </label>
-      </div>
+      </div> -->
 
     {{> footer}}
     
