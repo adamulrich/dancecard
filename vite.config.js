@@ -33,6 +33,7 @@ export default defineConfig({
           main_account_info: resolve(__dirname, './src/main_account_info.html'),
           main_admin_schedule: resolve(__dirname, './src/main_admin_schedule.html'),
           main_admin: resolve(__dirname, './src/main_admin.html'),
+          main_standards: resolve(__dirname, './src/main_standards.html'),
           main: resolve(__dirname, './src/main.html'),
           schedule: resolve(__dirname, './src/schedule.html'),
           sign_in: resolve(__dirname, './src/sign_in.html'),
