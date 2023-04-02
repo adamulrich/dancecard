@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <script type='module' src="vite.config.js"></script> -->
+    {{> head}}
+</head>
+
+<body>
+    {{> aside}}
+
+    {{> header}}
+
+        <div id='stake-info-box' class="skill-box">
+            <div class="header bg-cyan fg-white">
+                <!-- <img src="images/jek_vorobey.jpg" class="avatar"> -->
+                <div class="icon bg-cyan fg-white"><span class="mif-calendar"></span></div>
+                <div id='region-name' class="title"></div>
+            </div>
+            <ul id='schedule' class="skills">
+            </ul>
+        </div>
+
+        <script type='module' src="./scripts/main_admin_schedule.js"></script>
+    
+        {{> footer}}
+    
+    </body>
+    
+    </html>
